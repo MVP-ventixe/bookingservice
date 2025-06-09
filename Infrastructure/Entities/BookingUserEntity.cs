@@ -2,7 +2,7 @@
 
 namespace Infrastructure.Entities;
 
-public class BookingUserEntity 
+public class BookingUserEntity
 {
     public string Id { get; set; } = Guid.NewGuid().ToString();
     public string FullName { get; set; } = null!;

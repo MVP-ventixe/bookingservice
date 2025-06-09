@@ -18,6 +18,19 @@ public class BookingService(IBookingRepository bookingRepository) : IBookingServ
             PhoneNumber = request.PhoneNumber,
             TicketConunt = request.TicketCount,
             Notes = request.Notes,
+            BookingDate = DateTime.UtcNow,
+            BookingUser = new BookingUserEntity
+            {
+                FullName = request.FullName,
+                Email = request.Email,
+                PhoneNumber = request.PhoneNumber,
+                Address = new BookingAdressEntity
+                {
+                    City = request.City,
+                    PostalCode = request.PostalCode,
+                    Country = request.Country
+                }
+            }
         };
         var bookingUser = new BookingUserEntity
         {
