@@ -8,5 +8,5 @@ public class DataContext(DbContextOptions<DataContext> options) : DbContext(opti
 
     public DbSet<BookingEntity> Bookings { get; set; }
     public DbSet<BookingUserEntity> BookingUsers { get; set; }
-    public DbSet<BookingAdressEntity> BookingAdresses { get; set; }
+    public DbSet<BookingAddressEntity> BookingAdresses { get; set; }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Infrastructure.Entities;
 
-public class BookingAdressEntity
+public class BookingAddressEntity
 {
     public string Id { get; set; } = Guid.NewGuid().ToString();
     public string City { get; set; } = null!;

@@ -11,5 +11,5 @@ public class BookingUserEntity
 
     [ForeignKey(nameof(Address))]
     public string? BookingAdressId { get; set; }
-    public BookingAdressEntity? Address { get; set; }
+    public BookingAddressEntity? Address { get; set; }
 }

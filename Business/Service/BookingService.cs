@@ -18,32 +18,19 @@ public class BookingService(IBookingRepository bookingRepository) : IBookingServ
             PhoneNumber = request.PhoneNumber,
             TicketConunt = request.TicketCount,
             Notes = request.Notes,
-            BookingDate = DateTime.UtcNow,
+            BookingDate = DateTime.Now,
             BookingUser = new BookingUserEntity
             {
                 FullName = request.FullName,
                 Email = request.Email,
                 PhoneNumber = request.PhoneNumber,
-                Address = new BookingAdressEntity
+                Address = new BookingAddressEntity
                 {
                     City = request.City,
                     PostalCode = request.PostalCode,
                     Country = request.Country
                 }
             }
-        };
-        var bookingUser = new BookingUserEntity
-        {
-            FullName = request.FullName,
-            Email = request.Email,
-            PhoneNumber = request.PhoneNumber
-        };
-        var boookingAdress = new BookingAdressEntity
-        {
-            City = request.City,
-            PostalCode = request.PostalCode,
-            Country = request.Country
-
         };
         var result = await _bookingRepository.AddAsync(bookingEntity);
         if (result == null)
